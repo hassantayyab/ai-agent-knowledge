@@ -1,0 +1,19 @@
+---
+description: "When changing prompts/tools/RAG: propose evals and tracing. Use regression gates and trace-driven debugging."
+globs:
+  - **/*.*
+alwaysApply: false
+---
+
+# Evals + observability
+
+When proposing changes to agent behavior:
+
+- define success criteria
+- propose a small eval set (20–50 real cases)
+- prefer structured scoring (schemas/tool correctness)
+- use traces to debug failures (where retrieval/tool calls went wrong)
+
+If RAG:
+
+- score retrieval separately from generation faithfulness.

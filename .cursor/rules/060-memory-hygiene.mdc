@@ -1,0 +1,15 @@
+---
+description: "Memory guidance: store high-signal stable facts; avoid sensitive data; separate workflow state from long-term memory; retrieval gates."
+globs:
+  - **/*.*
+alwaysApply: false
+---
+
+# Memory hygiene
+
+- Store stable preferences and long-lived constraints.
+- Avoid secrets/PII and ephemeral details.
+- Separate:
+  - workflow state (structured, checkpointed)
+  - long-term memory (curated, user-controlled)
+- Retrieve memory only when triggered by intent or explicit need.

@@ -1,0 +1,22 @@
+---
+description: "When outputs feed automation: require JSON schema, validate, repair; use enums for routing and tool arg safety."
+globs:
+  - **/*.*
+alwaysApply: false
+---
+
+# Structured outputs (schema-first)
+
+Use structured outputs whenever:
+
+- downstream code consumes results
+- you must branch on a decision
+- tool arguments must be correct
+
+Pattern:
+
+1. define schema (minimal required fields)
+2. request ONLY JSON
+3. validate
+4. repair using validation errors (max 2–3 attempts)
+5. fail safely (ask clarifying questions)

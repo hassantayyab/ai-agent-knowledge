@@ -1,0 +1,34 @@
+---
+description: "Routing protocol: pick chapters from INDEX.json and keep context tight; prefer structured outputs and eval-driven iteration."
+globs:
+  - INDEX.json
+  - INDEX.md
+  - principles/chapters/*.md
+  - patterns/**/*.md
+  - **/*.md
+alwaysApply: true
+---
+
+# Retrieval routing protocol
+
+## Select chapters
+
+- Pick chapters by intent:
+  - workflows: Ch 12–15
+  - RAG: Ch 17–19 (+Ch 26)
+  - observability: Ch 16
+  - evals: Ch 25–27
+  - prompting + schemas: Ch 28–29
+  - security: Ch 30 (+Ch 9)
+  - memory: Ch 31–32
+  - multi-agent: Ch 21–24
+  - codegen: Ch 33
+
+## Context budget
+
+- Prefer 1 core chapter + 1 adjacent chapter.
+- Quote or reference chapter bullets; don’t invent new doctrine.
+
+## If user asks “which chapter should I use?”
+
+- Return a shortlist with 1–2 sentence rationale each.

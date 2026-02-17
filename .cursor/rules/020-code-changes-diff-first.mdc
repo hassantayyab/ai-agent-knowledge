@@ -1,0 +1,37 @@
+---
+description: "When editing code: plan-first, diff-first, verify-first. Avoid rewrites; propose checks; repair based on real errors."
+globs:
+  - **/*.*
+alwaysApply: false
+---
+
+# Code changes: diff-first and verifiable
+
+When asked to implement/change code:
+
+## Plan first
+
+- list files to touch
+- explain why each change is needed
+- state assumptions (framework/version)
+
+## Diff-first
+
+- prefer patches and small edits over rewriting files
+- keep changes minimal and reviewable
+
+## Verification loop (mandatory suggestions)
+
+Provide commands for:
+
+- format/lint
+- typecheck
+- unit tests
+- build/run smoke test
+  Then iterate based on the actual failures.
+
+## Guardrails
+
+- never delete/migrate large code without explicit request
+- avoid destructive shell commands
+- keep secrets out of code and logs

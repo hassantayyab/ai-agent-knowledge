@@ -1,0 +1,20 @@
+---
+description: "Multi-agent guidance: only use when specialization/parallelism is needed; start with supervisor+workers and schema handoffs."
+globs:
+  - **/*.*
+alwaysApply: false
+---
+
+# Multi-agent usage
+
+Only recommend multi-agent if:
+
+- tasks can be parallelized
+- specialization clearly improves quality
+- you can verify/merge deterministically
+
+Default pattern:
+
+- supervisor delegates to workers
+- workers return schema outputs with evidence + unknowns
+- supervisor reconciles conflicts and validates.

@@ -1,0 +1,27 @@
+---
+description: "Always-on: treat this repo as a routed knowledgebase. Route via INDEX.json, open only 1–3 chapters, then act."
+globs:
+  - **/*
+alwaysApply: true
+---
+
+# Always-on repo context
+
+You are in **ai-agent-library**: an LLM-friendly reference of agent-building patterns. Files are short, chapter-scoped notes.
+
+## Golden rule: route first (mandatory)
+
+1. Open `INDEX.json` (primary router; `INDEX.md` is a human view).
+2. Select **1–3 chapters** using `keywords` + `use_when`.
+3. Open only those chapter files under `principles/chapters/` (and optionally `patterns/` if present).
+4. Answer grounded in those chapters.
+
+If missing info, expand by +1 chapter. Do NOT load many chapters.
+
+## Answer shape (default)
+
+- **Chapters used:** Ch XX, Ch YY
+- **Plan:** 3–7 steps
+- **Implementation:** minimal diffs / file changes
+- **Verification:** commands/checks to run
+- **Risks/edge cases:** security + failure modes + rollback
