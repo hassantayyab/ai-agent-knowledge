@@ -1,0 +1,591 @@
+{
+  "routing_policy": {
+    "max_chapters_default": 2,
+    "process": [
+      "read INDEX.md",
+      "select <=2 chapters",
+      "open those chapters",
+      "add 1 more if needed"
+    ]
+  },
+  "books": [
+    {
+      "id": "principles",
+      "title": "Principles of Building AI Agents (2nd ed)",
+      "base_dir": "principles/chapters"
+    },
+    {
+      "id": "patterns",
+      "title": "Patterns for Building AI Agents",
+      "base_dir": "patterns/chapters"
+    }
+  ],
+  "chapters": [
+    {
+      "book": "principles",
+      "chapter": 1,
+      "title": "From \u201cAttention\u201d to ChatGPT: the modern LLM timeline",
+      "use_when": "Use when you need context on where LLMs came from and why 2017/2022 mattered.",
+      "best_for": "background, product context",
+      "keywords": ["history", "transformers", "chatgpt", "tokens"],
+      "file": "principles/chapters/01-from-attention-to-chatgpt.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 2,
+      "title": "Choosing models like an engineer: provider, size, context, reasoning",
+      "use_when": "Use when deciding hosted vs OSS, model size tradeoffs, context windows, or reasoning models.",
+      "best_for": "model selection, architecture tradeoffs",
+      "keywords": ["provider", "latency", "cost", "context window", "reasoning"],
+      "file": "principles/chapters/02-choosing-provider-and-model.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 3,
+      "title": "Prompt engineering that actually works: examples, system prompts, and structure",
+      "use_when": "Use when prompts are inconsistent and you need better control via examples, formatting, and constraints.",
+      "best_for": "prompt design, reliability",
+      "keywords": ["prompting", "few-shot", "system prompt", "formatting"],
+      "file": "principles/chapters/03-writing-great-prompts.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 4,
+      "title": "Agents 101",
+      "use_when": "Use when you\u2019re deciding whether you need an agent and want the core mental model (agent loop, autonomy, tools, state).",
+      "best_for": "Defining an agent vs workflow; core components; a minimal agent loop implementation.",
+      "keywords": ["agents", "agent loop", "autonomy", "tools", "state", "workflow"],
+      "file": "principles/chapters/04-agents-101.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 5,
+      "title": "Model Routing and Structured Output",
+      "use_when": "Use when you need to route requests to different models and require structured outputs for automation or branching.",
+      "best_for": "Tiered routing (cheap\u2192strong), fallbacks, and schema-first JSON outputs with validation/repair.",
+      "keywords": [
+        "model routing",
+        "structured output",
+        "schemas",
+        "validation",
+        "fallback",
+        "cost",
+        "latency"
+      ],
+      "file": "principles/chapters/05-model-routing-and-structured-output.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 6,
+      "title": "Tool Calling",
+      "use_when": "Use when your agent must call tools/APIs reliably and safely.",
+      "best_for": "Tool specs, argument validation, retries, budgeting tool calls, and safe interpretation of results.",
+      "keywords": [
+        "tool calling",
+        "function calling",
+        "validation",
+        "retries",
+        "budgets",
+        "tool specs"
+      ],
+      "file": "principles/chapters/06-tool-calling.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 7,
+      "title": "Agent Memory",
+      "use_when": "Use when you want persistence/personalization across sessions without turning memory into a junk drawer.",
+      "best_for": "Memory layers, what to store/avoid, retrieval strategies, and basic vector memory patterns.",
+      "keywords": [
+        "memory",
+        "long-term memory",
+        "vector memory",
+        "retrieval",
+        "personalization",
+        "hygiene"
+      ],
+      "file": "principles/chapters/07-agent-memory.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 8,
+      "title": "Dynamic Agents",
+      "use_when": "Use when you want agents that adapt prompts/tools/plans at runtime (intent modes, escalation, gating).",
+      "best_for": "Mode switching, toolset gating, structured routing decisions, and observability for dynamic behavior.",
+      "keywords": [
+        "dynamic agents",
+        "routing",
+        "modes",
+        "escalation",
+        "tool gating",
+        "observability"
+      ],
+      "file": "principles/chapters/08-dynamic-agents.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 9,
+      "title": "Agent Middleware",
+      "use_when": "Use when you need a reliability/safety layer outside the model (ACLs, retries, validation, tracing).",
+      "best_for": "Middleware pipeline patterns, tool governance, permissions enforcement, and post-processing.",
+      "keywords": [
+        "middleware",
+        "permissions",
+        "ACL",
+        "validation",
+        "redaction",
+        "tracing",
+        "budgets"
+      ],
+      "file": "principles/chapters/09-agent-middleware.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 10,
+      "title": "Popular Third-Party Tools",
+      "use_when": "Use when you\u2019re selecting third-party tooling for orchestration, RAG, evals, tracing, or model gateways.",
+      "best_for": "Ecosystem map and decision criteria; avoiding lock-in via interfaces; tooling-by-category.",
+      "keywords": [
+        "frameworks",
+        "tools",
+        "orchestration",
+        "RAG",
+        "evals",
+        "tracing",
+        "model gateway"
+      ],
+      "file": "principles/chapters/10-popular-third-party-tools.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 11,
+      "title": "Model Context Protocol: a USB\u2011C for agent tools",
+      "use_when": "Use when you need a standard way to connect agents/models to tools across providers and want tool portability.",
+      "best_for": "MCP server/client mental model; wiring tools via MCP; composing tool gateways via a proxy server.",
+      "keywords": [
+        "MCP",
+        "model context protocol",
+        "servers",
+        "clients",
+        "tools",
+        "portability",
+        "registries",
+        "stdio",
+        "SSE"
+      ],
+      "file": "principles/chapters/11-mcp-model-context-protocol.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 12,
+      "title": "Workflows 101: when agents have too much freedom",
+      "use_when": "Use when you need predictable, structured execution (graphs/decision trees) instead of fully autonomous agent behavior.",
+      "best_for": "Decomposing tasks into steps; branching/parallelism/checkpoints; adding tracing to multi-step logic.",
+      "keywords": [
+        "workflows",
+        "graphs",
+        "decision trees",
+        "branching",
+        "parallel execution",
+        "checkpoints",
+        "tracing"
+      ],
+      "file": "principles/chapters/12-workflows-101.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 13,
+      "title": "Workflow graph patterns: branching, chaining, merging, and conditions",
+      "use_when": "Use when you\u2019re designing workflow graphs and need reliable control flow primitives (branching/merging/conditions).",
+      "best_for": "Decomposing into small nodes; binary decision points; fan-out/fan-in merges with clear schemas.",
+      "keywords": [
+        "workflows",
+        "branching",
+        "chaining",
+        "merging",
+        "conditions",
+        "fan-out",
+        "fan-in",
+        "control flow"
+      ],
+      "file": "principles/chapters/13-workflow-graph-patterns.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 14,
+      "title": "Suspend and resume: workflows that wait for humans and external events",
+      "use_when": "Use when your workflow must pause for approvals, webhooks, or long-running external jobs.",
+      "best_for": "Durable state + checkpointing; idempotent side effects; correlating external events to workflow instances.",
+      "keywords": [
+        "suspend",
+        "resume",
+        "checkpoints",
+        "durable state",
+        "approvals",
+        "webhooks",
+        "idempotency",
+        "correlation IDs"
+      ],
+      "file": "principles/chapters/14-suspend-and-resume.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 15,
+      "title": "Streaming updates: making long agent workflows feel alive",
+      "use_when": "Use when your agent/workflow takes seconds+ and you need progress visibility and better UX.",
+      "best_for": "Token streaming vs event streaming; designing progress events and state transitions for UIs.",
+      "keywords": [
+        "streaming",
+        "token streaming",
+        "event streaming",
+        "progress updates",
+        "lifecycle events",
+        "UX"
+      ],
+      "file": "principles/chapters/15-streaming-updates.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 16,
+      "title": "Observability and tracing: debugging agents like distributed systems",
+      "use_when": "Use when you need to debug/iterate on agent behavior and want evidence (what happened) instead of guesswork.",
+      "best_for": "Tracing model/tool/retrieval steps; structured logs + metrics; building evals from real failures.",
+      "keywords": [
+        "observability",
+        "tracing",
+        "spans",
+        "logs",
+        "metrics",
+        "debugging",
+        "retries",
+        "failures"
+      ],
+      "file": "principles/chapters/16-observability-and-tracing.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 17,
+      "title": "RAG 101: retrieval beats stuffing context",
+      "use_when": "Use when your agent needs external/private/up-to-date knowledge that shouldn\u2019t be shoved into the prompt.",
+      "best_for": "Understanding the RAG pipeline; chunking + metadata; grounding answers with retrieved context.",
+      "keywords": [
+        "RAG",
+        "retrieval-augmented generation",
+        "embeddings",
+        "vector database",
+        "chunking",
+        "grounding",
+        "citations"
+      ],
+      "file": "principles/chapters/17-rag-101.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 18,
+      "title": "Choosing a vector database: the boring parts that matter",
+      "use_when": "Use when you\u2019re picking storage for embeddings and need to decide between vector DBs vs DBs-with-vectors.",
+      "best_for": "Filtering/permissions, hybrid search, ops constraints, and retrieval abstraction decisions.",
+      "keywords": [
+        "vector database",
+        "embeddings",
+        "similarity search",
+        "metadata filtering",
+        "hybrid search",
+        "multi-tenant",
+        "RAG"
+      ],
+      "file": "principles/chapters/18-choosing-a-vector-database.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 19,
+      "title": "Building a RAG pipeline: ingestion, chunking, retrieval, and guardrails",
+      "use_when": "Use when you\u2019re implementing RAG end-to-end and need practical stages + quality levers.",
+      "best_for": "Ingestion/chunking/metadata, retrieval filters, grounded generation prompts, and reliability upgrades (rerank, rewrite).",
+      "keywords": [
+        "RAG pipeline",
+        "ingestion",
+        "parsing",
+        "chunking",
+        "metadata",
+        "retrieval",
+        "filtering",
+        "reranking",
+        "query rewriting",
+        "grounding"
+      ],
+      "file": "principles/chapters/19-setting-up-your-rag-pipeline.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 20,
+      "title": "Alternatives to RAG: when retrieval isn\u2019t the best hammer",
+      "use_when": "Use when you\u2019re considering non-RAG approaches (fine-tune, cache, structured DB/tools, long context) or hybrid designs.",
+      "best_for": "Choosing the simplest mechanism that meets correctness + latency + cost + governance.",
+      "keywords": [
+        "alternatives to RAG",
+        "fine-tuning",
+        "caching",
+        "precompute",
+        "structured databases",
+        "knowledge graphs",
+        "long context window"
+      ],
+      "file": "principles/chapters/20-alternatives-to-rag.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 21,
+      "title": "Multi-agent systems 101: specialization, coordination, and failure modes",
+      "use_when": "Use when a single agent/workflow isn\u2019t enough and you need specialization or parallelism.",
+      "best_for": "Supervisor/worker architecture; multi-agent failure modes; stabilization tactics (schemas, budgets, termination).",
+      "keywords": [
+        "multi-agent",
+        "supervisor",
+        "workers",
+        "delegation",
+        "coordination",
+        "parallelism",
+        "failure modes",
+        "termination"
+      ],
+      "file": "principles/chapters/21-multi-agent-101.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 22,
+      "title": "The supervisor pattern: one boss, many specialists",
+      "use_when": "Use when you want to start multi-agent systems with a controlled delegation pattern (one coordinator, multiple specialists).",
+      "best_for": "Designing supervisor + worker roles, delegation budgets, stop conditions, and merge/reconcile behavior.",
+      "keywords": [
+        "supervisor",
+        "multi-agent",
+        "delegation",
+        "workers",
+        "coordination",
+        "merge",
+        "budgets",
+        "stop conditions"
+      ],
+      "file": "principles/chapters/22-supervisor-pattern.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 23,
+      "title": "Inter-agent communication: handoffs, schemas, and trust boundaries",
+      "use_when": "Use when agents need to hand off work to other agents and you want reliable, low-bloat communication.",
+      "best_for": "Handoff schemas, trust boundaries, evidence/unknowns fields, and verification to prevent error propagation.",
+      "keywords": [
+        "handoffs",
+        "inter-agent communication",
+        "schemas",
+        "trust boundaries",
+        "verification",
+        "context budgeting",
+        "evidence"
+      ],
+      "file": "principles/chapters/23-inter-agent-communication.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 24,
+      "title": "Multi-agent workflows: combining specialization with graph control",
+      "use_when": "Use when you want multi-agent specialization but need workflow-level determinism (branches, merges, checkpoints).",
+      "best_for": "Workflow-as-orchestrator patterns, fan-out/fan-in, conditional escalation, and standardizing merge schemas and budgets.",
+      "keywords": [
+        "multi-agent workflows",
+        "orchestration",
+        "graphs",
+        "fan-out",
+        "fan-in",
+        "escalation",
+        "merges",
+        "checkpoints"
+      ],
+      "file": "principles/chapters/24-multi-agent-workflows.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 25,
+      "title": "Evals 101: measuring agent quality without vibes",
+      "use_when": "Use when you need to measure and improve agent reliability (correctness, tool use, policy, consistency).",
+      "best_for": "Eval types (unit/e2e/regression), scoring methods (schema checks, heuristics, LLM-judge), and building datasets from traces.",
+      "keywords": [
+        "evals",
+        "evaluation",
+        "regression",
+        "LLM judge",
+        "rubric",
+        "datasets",
+        "scoring",
+        "quality"
+      ],
+      "file": "principles/chapters/25-evals-101.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 26,
+      "title": "Evaluating RAG: retrieval quality, grounding, and answer faithfulness",
+      "use_when": "Use when you need to measure RAG performance and distinguish retrieval failures from generation faithfulness failures.",
+      "best_for": "Recall@k/precision@k, grounding checks, gold sets, and adversarial RAG eval cases.",
+      "keywords": [
+        "RAG evals",
+        "recall@k",
+        "precision@k",
+        "grounding",
+        "faithfulness",
+        "citations",
+        "gold set",
+        "adversarial queries"
+      ],
+      "file": "principles/chapters/26-evaluating-rag.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 27,
+      "title": "Evaluating tool calling: selection, args, robustness, interpretation",
+      "use_when": "Use when you need to measure tool-use reliability (selection, arguments, retries, interpretation).",
+      "best_for": "Building tool-call datasets from traces; schema-based scoring; mocked tools for deterministic eval runs.",
+      "keywords": [
+        "tool calling evals",
+        "tool selection",
+        "arguments",
+        "schema validation",
+        "retries",
+        "robustness",
+        "traces",
+        "mocking"
+      ],
+      "file": "principles/chapters/27-evaluating-tool-calling.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 28,
+      "title": "Prompt engineering for agents: instructions that actually stick",
+      "use_when": "Use when you\u2019re writing system prompts for agents and need clarity on roles, constraints, tool rules, and output contracts.",
+      "best_for": "Prompt structure, common failure fixes, and treating prompts like versioned code tied to evals/traces.",
+      "keywords": [
+        "prompt engineering",
+        "system prompt",
+        "instructions",
+        "constraints",
+        "tool rules",
+        "output format",
+        "examples",
+        "versioning"
+      ],
+      "file": "principles/chapters/28-prompt-engineering.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 29,
+      "title": "Structured outputs: schemas, validators, and reliable parsing",
+      "use_when": "Use when the agent output must be machine-consumable (automation, workflow routing, storage, scoring).",
+      "best_for": "Schema-first prompting, validation/repair loops, enum-based routing fields, and production-safe parsing.",
+      "keywords": [
+        "structured output",
+        "schema",
+        "JSON",
+        "validation",
+        "repair loop",
+        "enums",
+        "parsing",
+        "determinism"
+      ],
+      "file": "principles/chapters/29-structured-outputs.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 30,
+      "title": "Prompt injection defense: securing tools, RAG, and agent boundaries",
+      "use_when": "Use when you\u2019re building agents that browse/retrieve/call tools and need a layered security posture.",
+      "best_for": "Treating retrieved text as untrusted; tool allowlists/least privilege; ACL-filtered retrieval; output validation/redaction; adversarial evals.",
+      "keywords": [
+        "prompt injection",
+        "jailbreaks",
+        "untrusted content",
+        "least privilege",
+        "allowlist",
+        "ACL",
+        "RAG security",
+        "redaction"
+      ],
+      "file": "principles/chapters/30-prompt-injection-defense.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 31,
+      "title": "Memory 101: what to remember, where to store it, and when to retrieve",
+      "use_when": "Use when you want agents to persist information across turns/sessions without creating clutter or privacy risk.",
+      "best_for": "Memory layers (short-term/working/long-term), storage types (KV/notes/vector), retrieval strategies, memory hygiene.",
+      "keywords": [
+        "memory",
+        "personalization",
+        "long-term memory",
+        "working memory",
+        "vector memory",
+        "retrieval",
+        "hygiene",
+        "dedup",
+        "expiry"
+      ],
+      "file": "principles/chapters/31-memory-101.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 32,
+      "title": "Memory in workflows and multi-agent systems: shared state without chaos",
+      "use_when": "Use when you need shared state across workflow nodes or agents without letting memory become noisy or unsafe.",
+      "best_for": "Separating workflow state vs long-term memory; memory curation/curator roles; retrieval gates; preventing speculative memories.",
+      "keywords": [
+        "workflow state",
+        "shared memory",
+        "curation",
+        "memory curator",
+        "retrieval gates",
+        "checkpoints",
+        "handoffs",
+        "schemas"
+      ],
+      "file": "principles/chapters/32-memory-in-workflows-and-multi-agent.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 33,
+      "title": "Code generation: making agents write code you can ship",
+      "use_when": "Use when you want an agent (or coding assistant) to generate/modify code safely and reliably, not as a one-shot code dump.",
+      "best_for": "Diff-first codegen, scaffolding/context control, verification loops (lint/typecheck/tests/build), and repair based on real errors.",
+      "keywords": [
+        "code generation",
+        "diffs",
+        "patches",
+        "verification loop",
+        "tests",
+        "lint",
+        "typecheck",
+        "repair",
+        "CI"
+      ],
+      "file": "principles/chapters/33-code-generation.md"
+    },
+    {
+      "book": "principles",
+      "chapter": 34,
+      "title": "What\u2019s next: building your agent roadmap",
+      "use_when": "Use when you want a pragmatic, ROI-driven sequence for building agents from v1 to workflows, evals, RAG, memory, and multi-agent.",
+      "best_for": "Roadmapping and prioritization; avoiding premature complexity; choosing the simplest architecture that meets requirements and is testable.",
+      "keywords": [
+        "roadmap",
+        "progression",
+        "v1 agent",
+        "workflows",
+        "evals",
+        "observability",
+        "RAG",
+        "memory",
+        "multi-agent"
+      ],
+      "file": "principles/chapters/34-whats-next-roadmap.md"
+    }
+  ]
+}
