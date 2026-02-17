@@ -1,4 +1,4 @@
-# AI Agent Library
+# AI Agent Knowledge Base
 
 An LLM-optimized knowledgebase for building production-grade AI agents. This repository contains comprehensive principles and patterns extracted from practical experience building reliable, scalable agent systems.
 
